@@ -9,4 +9,12 @@ describe("boolean calculator", () => {
 
     expect(result).toBeTruthy();
   });
+
+  it('should return false when evaluate "FALSE" expression', () => {
+    const booleanCalculator = new BooleanCalculator();
+
+    const result = booleanCalculator.evaluate("FALSE");
+
+    expect(result).toBeFalsy();
+  });
 });
