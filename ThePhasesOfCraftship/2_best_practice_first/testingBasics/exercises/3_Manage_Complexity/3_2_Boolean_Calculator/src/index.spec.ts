@@ -51,4 +51,9 @@ describe("boolean calculator", () => {
     const result = calculator.evaluate("TRUE OR TRUE AND FALSE");
     expect(result).toBe(true);
   });
+
+  it("should evaluates NOT before AND", () => {
+    const result = calculator.evaluate("NOT TRUE AND FALSE");
+    expect(result).toBe(false);
+  });
 });
