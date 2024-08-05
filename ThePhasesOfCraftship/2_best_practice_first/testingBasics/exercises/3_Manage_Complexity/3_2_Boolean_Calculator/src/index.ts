@@ -6,4 +6,8 @@ export class BooleanCalculator {
 
     return true;
   }
+
+  public splitExpression(expression: string, operator: string): string[] {
+    return ["", expression];
+  }
 }
