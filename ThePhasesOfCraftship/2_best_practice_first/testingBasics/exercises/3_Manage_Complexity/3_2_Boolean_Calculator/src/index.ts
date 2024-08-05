@@ -1,5 +1,8 @@
 export class BooleanCalculator {
-  public evaluate(exp: string): boolean {
-    return true;
+  public evaluate(expression: string): boolean {
+    if (expression === "TRUE") return true;
+    if (expression === "FALSE") return false;
+
+    return false;
   }
 }
