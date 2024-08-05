@@ -56,4 +56,14 @@ describe("boolean calculator", () => {
     const result = calculator.evaluate("NOT TRUE AND FALSE");
     expect(result).toBe(false);
   });
+
+  it("should return true when evaluates complex expression 'TRUE OR FALSE AND NOT FALSE'", () => {
+    const result = calculator.evaluate("TRUE OR FALSE AND NOT FALSE");
+    expect(result).toBe(true);
+  });
+
+  it("should return true when evaluates complex expression 'TRUE AND FALSE OR FALSE AND NOT TRUE'", () => {
+    const result = calculator.evaluate("TRUE AND FALSE OR FALSE AND NOT TRUE");
+    expect(result).toBe(false);
+  });
 });
