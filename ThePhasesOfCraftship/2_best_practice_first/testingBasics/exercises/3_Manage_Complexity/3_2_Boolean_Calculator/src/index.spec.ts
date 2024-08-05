@@ -26,4 +26,14 @@ describe("boolean calculator", () => {
     const result = calculator.evaluate("NOT FALSE");
     expect(result).toBe(true);
   });
+
+  it("should return false when evaluate 'TRUE AND FALSE' expression", () => {
+    const result = calculator.evaluate("TRUE AND FALSE");
+    expect(result).toBe(false);
+  });
+
+  it("should return false when evaluate 'TRUE AND TRUE' expression", () => {
+    const result = calculator.evaluate("TRUE AND TRUE");
+    expect(result).toBe(true);
+  });
 });
