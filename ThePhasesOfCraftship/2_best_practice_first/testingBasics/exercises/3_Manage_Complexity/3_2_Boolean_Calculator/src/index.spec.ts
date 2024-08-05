@@ -71,4 +71,10 @@ describe("boolean calculator", () => {
     expect(calculator.evaluate("(TRUE)")).toBe(true);
     expect(calculator.evaluate("(FALSE)")).toBe(false);
   });
+
+  it("should evaluates nested parentheses correctly", () => {
+    expect(calculator.evaluate("((TRUE))")).toBe(true);
+    expect(calculator.evaluate("(NOT (TRUE AND FALSE))")).toBe(true);
+    expect(calculator.evaluate("(TRUE OR TRUE OR TRUE) AND FALSE")).toBe(false);
+  });
 });
