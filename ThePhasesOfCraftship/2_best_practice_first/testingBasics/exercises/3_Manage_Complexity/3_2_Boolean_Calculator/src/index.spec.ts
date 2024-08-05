@@ -46,4 +46,9 @@ describe("boolean calculator", () => {
     const result = calculator.evaluate("FALSE OR FALSE");
     expect(result).toBe(false);
   });
+
+  it("should evaluates AND before OR", () => {
+    const result = calculator.evaluate("TRUE OR TRUE AND FALSE");
+    expect(result).toBe(true);
+  });
 });
