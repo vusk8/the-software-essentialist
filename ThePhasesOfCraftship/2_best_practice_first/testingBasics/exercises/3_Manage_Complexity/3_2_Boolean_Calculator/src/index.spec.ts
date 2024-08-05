@@ -17,4 +17,20 @@ describe("boolean calculator", () => {
 
     expect(result).toBe(false);
   });
+
+  it("should return false when evaluate 'NOT TRUE' expression", () => {
+    const calculator = new BooleanCalculator();
+
+    const result = calculator.evaluate("NOT TRUE");
+
+    expect(result).toBe(false);
+  });
+
+  it("should return true when evaluate 'NOT FALSE' expression", () => {
+    const calculator = new BooleanCalculator();
+
+    const result = calculator.evaluate("NOT FALSE");
+
+    expect(result).toBe(true);
+  });
 });

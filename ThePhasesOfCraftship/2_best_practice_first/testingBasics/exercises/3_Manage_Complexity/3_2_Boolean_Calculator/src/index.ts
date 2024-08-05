@@ -2,6 +2,9 @@ export class BooleanCalculator {
   public evaluate(expression: string): boolean {
     if (expression === "TRUE") return true;
     if (expression === "FALSE") return false;
+    if (expression.startsWith("NOT ")) {
+      return !this.evaluate(expression.substring(4));
+    }
 
     return false;
   }
