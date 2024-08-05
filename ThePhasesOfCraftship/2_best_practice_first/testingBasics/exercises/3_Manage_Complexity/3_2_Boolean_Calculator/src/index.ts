@@ -8,6 +8,10 @@ export class BooleanCalculator {
   }
 
   public splitExpression(expression: string, operator: string): string[] {
+    if (expression.includes(operator)) {
+      return [expression, ""];
+    }
+
     return ["", expression];
   }
 }

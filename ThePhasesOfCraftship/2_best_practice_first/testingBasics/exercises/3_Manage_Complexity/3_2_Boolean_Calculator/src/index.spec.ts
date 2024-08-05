@@ -78,5 +78,9 @@ describe("boolean calculator", () => {
       const result = booleanCalculator.splitExpression("TRUE", "AND");
       expect(result).toEqual(["", "TRUE"]);
     });
+    it("should return ['TRUE AND FALSE', ''] when split AND operator", () => {
+      const result = booleanCalculator.splitExpression("TRUE AND FALSE", "AND");
+      expect(result).toEqual(["TRUE AND FALSE", ""]);
+    });
   });
 });
