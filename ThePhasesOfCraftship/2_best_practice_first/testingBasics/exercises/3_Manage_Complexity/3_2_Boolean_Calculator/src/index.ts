@@ -11,6 +11,11 @@ export class BooleanCalculator {
       return this.evaluate(parts[0]) && this.evaluate(parts[1]);
     }
 
+    if (expression.includes(" OR ")) {
+      const parts = expression.split(" OR ");
+      return this.evaluate(parts[0]) || this.evaluate(parts[1]);
+    }
+
     return false;
   }
 }
