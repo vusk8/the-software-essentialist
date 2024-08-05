@@ -66,4 +66,9 @@ describe("boolean calculator", () => {
     const result = calculator.evaluate("TRUE AND FALSE OR FALSE AND NOT TRUE");
     expect(result).toBe(false);
   });
+
+  it("should evaluates single value within parentheses", () => {
+    expect(calculator.evaluate("(TRUE)")).toBe(true);
+    expect(calculator.evaluate("(FALSE)")).toBe(false);
+  });
 });

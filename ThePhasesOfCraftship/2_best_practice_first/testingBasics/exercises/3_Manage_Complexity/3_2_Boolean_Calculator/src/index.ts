@@ -1,5 +1,14 @@
 export class BooleanCalculator {
   public evaluate(expression: string): boolean {
+    const formattedExpression = expression.replace(/\s+/g, "");
+    const start = formattedExpression.indexOf("(");
+    const end = formattedExpression.indexOf(")");
+
+    if (start !== -1 && end !== -1 && start < end) {
+      const inner = formattedExpression.substring(start + 1, end);
+      return this.evaluate(inner);
+    }
+
     if (expression === "TRUE") return true;
     if (expression === "FALSE") return false;
 
